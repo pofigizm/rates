@@ -26,6 +26,7 @@ class App extends Component {
     }
     this.change = this.change.bind(this)
     this.add = this.add.bind(this)
+    this.user = this.user.bind(this)
   }
 
   change(part, user, value) {
@@ -49,6 +50,16 @@ class App extends Component {
     this.setState({
       parties: this.state.parties.concat([res]),
     })
+  }
+
+  user(user, value) {
+    const users = this.state.users
+
+    users[user] = value
+    this.setState({
+      users,
+    })
+    save('users', this.state.users)
   }
 
   render() {
@@ -76,7 +87,7 @@ class App extends Component {
             { this.state.users.map((el, ix) => (
               <th>
                 <input
-                  onChange={() => {}}
+                  onChange={(ev) => this.user(ix, ev.target.value)}
                   value={el}
                 />
               </th>
