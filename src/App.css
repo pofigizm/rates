@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 70px;
+  padding: 5px;
+  color: white;
+}
+
+table {
+  margin: 10px auto;
+}
+
+td, th {
+  border: 1px solid gray;
+}
+
+input, td span, th span {
+  display: block;
+  text-align: center;
+  width: 21vw;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+button {
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+}
