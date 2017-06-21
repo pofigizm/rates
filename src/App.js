@@ -46,10 +46,12 @@ class App extends Component {
       .map(el => +el)
 
     const res = users.map((_, i) => party[i] || 0)
+    const parties = this.state.parties.concat([res])
 
     this.setState({
-      parties: this.state.parties.concat([res]),
+      parties,
     })
+    save(`parties-${date}`, parties)
   }
 
   user(user, value) {
